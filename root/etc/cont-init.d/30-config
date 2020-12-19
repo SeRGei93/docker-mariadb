@@ -7,10 +7,17 @@ mkdir -p \
   /var/run/mysqld
 
 # configure my.cnf and mysqld_safe
-sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/my.cnf
-sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
-sed -i "s|.*skip-networking.*|skip-networking|g" /etc/mysql/my.cnf
-sed -i "s|.*skip-networking.*|skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+sed -i \
+  -e "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" \
+  -e "s|.*skip-networking.*|skip-networking|g" \
+  /etc/mysql/my.cnf
+
+sed -i \
+  -e "s|.*skip-networking.*|skip-networking|g" \
+  -e "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" \
+  /etc/my.cnf.d/mariadb-server.cnf
+
+sed -i "s/user='mysql'/user='abc'/g" /usr/bin/mysqld_safe
 
 # setup custom cnf file
 [[ ! -f /config/custom.cnf ]] &&

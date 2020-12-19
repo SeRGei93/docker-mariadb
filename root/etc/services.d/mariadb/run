@@ -9,7 +9,6 @@ trap _term SIGTERM
 
 s6-setuidgid abc \
   /usr/bin/mysqld_safe \
-  --datadir=/config/databases \
-  --user=abc &
+  --datadir=/config/databases &
 
 wait
