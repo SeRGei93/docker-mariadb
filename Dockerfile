@@ -1,11 +1,10 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.12
+FROM vcxpz/baseimage-alpine
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG MARIADB_VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="thelamer,nemchik"
+LABEL build_version="Fork of Linuxserver.io version:- ${VERSION} Build date:- ${BUILD_DATE}"
+LABEL maintainer="hydaz"
 
 # environment variables
 ENV MYSQL_DIR="/config"
