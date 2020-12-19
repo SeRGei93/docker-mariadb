@@ -2,7 +2,7 @@
 
 # make folders if required
 mkdir -p \
-  "${DATADIR}" \
+  /config/databases \
   /config/log/mysql \
   /var/run/mysqld
 

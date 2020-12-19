@@ -12,9 +12,9 @@ start_mysql() {
   done
 }
 
-# test for existence of mysql folder in datadir and start initialise if not present
+# test for existence of mysql folder in /config/databases and start initialise if not present
 # BEGIN: No indentation due to heredocs
-if [ ! -d "${DATADIR}/mysql" ]; then
+if [ ! -d "/config/databases/mysql" ]; then
 
   # load env file if it exists
   if [ -f "/config/env" ]; then
@@ -94,7 +94,7 @@ EONEWSQL
   chmod -R 777 /config/log/mysql /var/run/mysqld
 
   # initialise database structure
-  mysql_install_db --datadir="${DATADIR}" --user=root
+  mysql_install_db --datadir=/config/databases --user=root
 
   # start mysql and apply our sql commands we set above
   start_mysql --user=root
