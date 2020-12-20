@@ -1,25 +1,18 @@
 #!/usr/bin/with-contenv bash
 
-# make folders if required
+# make folders if required
 mkdir -p \
-  /config/databases \
+  "${DATADIR}" \
   /config/log/mysql \
   /var/run/mysqld
 
-# configure my.cnf and mysqld_safe
-sed -i \
-  -e "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" \
-  -e "s|.*skip-networking.*|skip-networking|g" \
-  /etc/mysql/my.cnf
+# configure my.cnf and mysqld_safe
+sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/my.cnf
+sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+sed -i "s|.*skip-networking.*|skip-networking|g" /etc/mysql/my.cnf
+sed -i "s|.*skip-networking.*|skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
 
-sed -i \
-  -e "s|.*skip-networking.*|skip-networking|g" \
-  -e "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" \
-  /etc/my.cnf.d/mariadb-server.cnf
-
-sed -i "s/user='mysql'/user='abc'/g" /usr/bin/mysqld_safe
-
-# setup custom cnf file
+# setup custom cnf file
 [[ ! -f /config/custom.cnf ]] &&
   cp /defaults/my.cnf /config/custom.cnf
 [[ ! -L /etc/my.cnf.d/custom.cnf && -f /etc/my.cnf.d/custom.cnf ]] &&
@@ -27,6 +20,6 @@ sed -i "s/user='mysql'/user='abc'/g" /usr/bin/mysqld_safe
 [[ ! -L /etc/my.cnf.d/custom.cnf ]] &&
   ln -s /config/custom.cnf /etc/my.cnf.d/custom.cnf
 
-# set permissions
+# set permissions
 chmod -R 777 \
   /var/run/mysqld
