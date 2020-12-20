@@ -2,8 +2,6 @@
 
 [MariaDB](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.
 
-[![mariadb](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png)](https://mariadb.org/)
-
 [![Docker hub](https://img.shields.io/badge/docker%20hub-link-blue?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/vcxpz/mariadb) ![Docker Image Size](https://img.shields.io/docker/image-size/vcxpz/mariadb?style=for-the-badge&logo=docker) [![Autobuild](https://img.shields.io/badge/auto%20build-weekly-blue?style=for-the-badge&logo=docker?color=d1aa67)](https://github.com/hydazz/docker-mariadb/actions?query=workflow%3A%22Docker+Update+CI%22)
 
 ## Version Information
