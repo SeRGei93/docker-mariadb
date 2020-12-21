@@ -16,7 +16,7 @@ RUN \
 	gnupg \
 	mariadb \
 	mariadb-client \
-	mariadb-server-utils && \
+	mariadb-common && \
  echo "**** cleanup ****" && \
  rm -rf \
     /root/.cache \
