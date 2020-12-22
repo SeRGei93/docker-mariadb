@@ -26,3 +26,4 @@ docker run -d \
 
 ## Todo
 * Fix `mysqld: Please consult the Knowledge Base to find out how to run mysqld as root!` Error
+* Change build_version to current MariaDB release
