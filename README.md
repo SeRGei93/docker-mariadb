@@ -25,4 +25,4 @@ docker run -d \
 ```
 
 ## Todo
-* Change build_version to current MariaDB release
+* Stability testing
