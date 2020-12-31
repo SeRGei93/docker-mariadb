@@ -1,5 +1,5 @@
 ## Alpine Edge fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-mariadb/)
-[MariaDB](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.
+[MariaDB](https://mariadb.org/) was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance.
 
 [![docker hub](https://img.shields.io/badge/docker_hub-link-blue?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/vcxpz/mariadb) ![docker image size](https://img.shields.io/docker/image-size/vcxpz/mariadb?style=for-the-badge&logo=docker) [![auto build](https://img.shields.io/badge/auto_build-weekly-blue?style=for-the-badge&logo=docker?color=d1aa67)](https://github.com/hydazz/docker-mariadb/actions?query=workflow%3A%22Cron+Update+CI%22)
 
@@ -22,6 +22,7 @@ docker run -d \
   --restart unless-stopped \
   vcxpz/mariadb
 ```
+On Unraid? There's a [template](https://github.com/hydazz/docker-templates/blob/main/hydaz/mariadb.xml)
 
 ## Todo
-* test if `MYSQL_USER`, `MYSQL_PASSWORD` and `MYSQL_DATABASE` variables work
+* Nothing, everything works 🙂
