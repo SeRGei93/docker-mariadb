@@ -22,7 +22,7 @@ docker run -d \
   --restart unless-stopped \
   vcxpz/mariadb
 ```
-On Unraid? There's a [template](https://github.com/hydazz/docker-templates/blob/main/hydaz/MariaDB.xml)
+On Unraid? There's a [template](https://github.com/hydazz/docker-templates/blob/main/hydaz/mariadb.xml)
 
 ## Todo
 * Nothing, everything works 🙂
