@@ -3,8 +3,12 @@ FROM vcxpz/baseimage-alpine
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="MariaDB version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="Alex Hyde"
+LABEL build_version="Mariadb version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="hydaz"
+
+# environment variables
+ENV MYSQL_DIR="/config"
+ENV DATADIR=$MYSQL_DIR/databases
 
 RUN \
    echo "**** install runtime packages ****" && \
