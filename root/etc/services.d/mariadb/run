@@ -13,7 +13,7 @@ s6-setuidgid abc \
   --bind-address=0.0.0.0 \
   --skip-name-resolve \
   --skip-networking=0 \
-  --datadir="${DATADIR}" \
+  --datadir=/config/databases \
   --user=abc &
 
 wait

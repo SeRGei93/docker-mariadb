@@ -2,7 +2,7 @@
 
 # set start function that creates user and password, used later
 start_mysql() {
-  mysqld --datadir="${DATADIR}" --init-file="${tempSqlFile}" --user=abc &
+  mysqld --datadir=/config/databases --init-file="${tempSqlFile}" --user=abc &
   pid="$!"
   RET=1
   while [[ RET -ne 0 ]]; do
@@ -101,7 +101,7 @@ EONEWSQL
     /var/lib/mysql
 
   # initialise database structure
-  mysql_install_db --datadir="${DATADIR}" --user=abc
+  mysql_install_db --datadir=/config/databases --user=abc
 
   # start mysql and apply our sql commands we set above
   start_mysql
