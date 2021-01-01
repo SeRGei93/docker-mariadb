@@ -14,6 +14,7 @@ s6-setuidgid abc \
   --skip-name-resolve \
   --skip-networking=0 \
   --datadir="${DATADIR}" \
+  --pid-file=/var/run/mysqld/mysqld.pid \
   --user=abc &
-
+v
 wait
