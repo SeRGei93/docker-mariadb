@@ -47,8 +47,8 @@ mariadb-10.5.8-r0
 mariadb-client-10.5.8-r0
 mariadb-common-10.5.8-r0
 mariadb-server-utils-10.5.8-r0
-musl-1.2.2_pre6-r0
-musl-utils-1.2.2_pre6-r0
+musl-1.2.2_pre7-r0
+musl-utils-1.2.2_pre7-r0
 ncurses-libs-6.2_p20210102-r0
 ncurses-terminfo-base-6.2_p20210102-r0
 nettle-3.6-r0
