@@ -7,6 +7,7 @@ Fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-maria
 
 ## Version Information
 ![alpine](https://img.shields.io/badge/alpine-edge-0D597F?style=for-the-badge&logo=alpine-linux) ![s6 overlay](https://img.shields.io/badge/s6_overlay-2.1.0.2-blue?style=for-the-badge) ![mariadb](https://img.shields.io/badge/mariadb-10.5.8-003545?style=for-the-badge&logo=mariadb)
+
 **[See here for a list of packages](https://github.com/hydazz/docker-mariadb/blob/main/package_versions.txt)**
 
 ## Usage
