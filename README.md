@@ -26,7 +26,7 @@ docker run -d \
   --restart unless-stopped \
   vcxpz/mariadb
 ```
-On Unraid? There's a [template](https://github.com/hydazz/docker-templates/blob/main/hydaz/mariadb.xml)
+[![auto build](https://img.shields.io/badge/unraid_template-ff8c2f?style=for-the-badge&logo=docker?color=d1aa67)](https://github.com/hydazz/docker-templates/blob/main/hydaz/mariadb.xml)
 
 **Read the official [README](https://github.com/linuxserver/docker-mariadb/) for more information**
 
