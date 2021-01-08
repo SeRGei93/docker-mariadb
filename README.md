@@ -28,7 +28,7 @@ docker run -d \
 ```
 On Unraid? There's a [template](https://github.com/hydazz/docker-templates/blob/main/hydaz/mariadb.xml)
 
+**Read the official [README](https://github.com/linuxserver/docker-mariadb/) for more information**
+
 ## Upgrading MariaDB
 To upgrade, all you have to do is pull our latest Docker image. We automatically check for MariaDB updates daily so there may be some delay when an update is released to when the image is updated.
-
-**Read the official [README](https://github.com/linuxserver/docker-mariadb/) for more information**
