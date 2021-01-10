@@ -5,6 +5,44 @@ Fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-maria
 
 [MariaDB](https://mariadb.org/) was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance.
 
+## Initial Setup
+Here's a quickstart guide on how to login to MySQL and create a new user and database.
+
+First open a shell to the container.
+
+    docker exec -it <container name> /bin/bash
+
+Then login to MySQL.
+
+    mysql -uroot -p
+
+You will be asked for a password, this is the one set in the `MYSQL_ROOT_PASSWORD` variable.
+
+Create a new user. Change `newuser` and `password` to something else.
+
+    CREATE USER 'newuser'@'%' IDENTIFIED BY 'password';
+
+Create a new database. Change `newdatabase` to something else.
+
+    CREATE DATABASE IF NOT EXISTS newdatabase;
+
+Allow `newuser` to access `newdatabase`.
+
+    GRANT ALL PRIVILEGES on newdatabase.* to 'newuser'@'%';
+
+Then reload the grant tables.
+
+    FLUSH privileges;
+
+All done!
+Now you can exit MySQL with
+
+    quit;
+
+Then exit the shell with
+
+    exit
+
 ## Version Information
 ![alpine](https://img.shields.io/badge/alpine-edge-0D597F?style=for-the-badge&logo=alpine-linux) ![s6 overlay](https://img.shields.io/badge/s6_overlay-2.1.0.2-blue?style=for-the-badge) ![mariadb](https://img.shields.io/badge/mariadb-10.5.8-003545?style=for-the-badge&logo=mariadb)
 
@@ -31,4 +69,4 @@ docker run -d \
 **Read the official [README](https://github.com/linuxserver/docker-mariadb/) for more information**
 
 ## Upgrading MariaDB
-To upgrade, all you have to do is pull our latest Docker image. We automatically check for MariaDB updates daily so there may be some delay when an update is released to when the image is updated.
+To upgrade, all you have to do is pull our latest Docker image. We automatically check for MariaDB updates weekly so there may be some delay when an update is released to when the image is updated.
