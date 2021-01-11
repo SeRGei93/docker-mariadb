@@ -16,7 +16,7 @@ RUN set -xe && \
       gnupg \
       mariadb \
       mariadb-client \
-      mariadb-server-utils && \
+      mariadb-common && \
    echo "**** cleanup ****" && \
    rm -rf \
       /root/.cache \
@@ -26,6 +26,10 @@ RUN set -xe && \
 
 # copy local files
 COPY root/ /
+
+# mariadb healthcheck
+HEALTHCHECK --start-period=10s --timeout=5s \
+   CMD pgrep mysqld
 
 # ports and volumes
 EXPOSE 3306
