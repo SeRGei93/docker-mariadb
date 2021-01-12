@@ -1,4 +1,4 @@
 {
   "overlay_version": "2.1.0.2",
-  "mariadb_version": "10.5.8"
+  "mariadb_release": "10.5.8"
 }

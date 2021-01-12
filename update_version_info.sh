@@ -1,18 +1,18 @@
 #!/bin/bash
 
-OVERLAY_VERSION=$(cat package_versions.txt | grep -E "s6-overlay.*?-" | sed -n 1p | cut -c 12- | sed -E 's/-r.*//g')
-MARIADB_VERSION=$(cat package_versions.txt | grep -E "mariadb.*?-" | sed -n 1p | cut -c 9- | sed -E 's/-r.*//g')
+OVERLAY_VERSION=$(curl -sX GET "https://raw.githubusercontent.com/hydazz/docker-baseimage-alpine/main/version_info.json" | jq -r .overlay_version)
+MARIADB_RELEASE=$(cat package_versions.txt | grep -E "mariadb.*?-" | sed -n 1p | cut -c 9- | sed -E 's/-r.*//g')
 
 OLD_OVERLAY_VERSION=$(cat version_info.json | jq -r .overlay_version)
-OLD_MARIADB_VERSION=$(cat version_info.json | jq -r .mariadb_version)
+OLD_MARIADB_RELEASE=$(cat version_info.json | jq -r .mariadb_release)
 
 sed -i \
 	-e "s/${OLD_OVERLAY_VERSION}/${OVERLAY_VERSION}/g" \
-	-e "s/${OLD_MARIADB_VERSION}/${MARIADB_VERSION}/g" \
+	-e "s/${OLD_MARIADB_RELEASE}/${MARIADB_RELEASE}/g" \
 	README.md
 
-NEW_VERSION_INFO="overlay_version|mariadb_version
-${OVERLAY_VERSION}|${MARIADB_VERSION}"
+NEW_VERSION_INFO="overlay_version|mariadb_release
+${OVERLAY_VERSION}|${MARIADB_RELEASE}"
 
 jq -Rn '
 ( input  | split("|") ) as $keys |
