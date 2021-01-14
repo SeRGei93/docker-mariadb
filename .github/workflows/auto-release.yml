@@ -15,7 +15,7 @@ jobs:
         id: variables
         run: |
           echo "::set-output name=OLD_VERSION::$(curl -sX GET "https://api.github.com/repos/hydazz/docker-mariadb/releases/latest" | jq -r .tag_name)"
-          echo "::set-output name=VERSION::$(cat package_versions.txt | grep -E "mariadb.*?-" | sed -n 1p | cut -c 9- | sed -E 's/-r.*//g')"
+          echo "::set-output name=VERSION::$(grep <package_versions.txt -E "mariadb.*?-" | sed -n 1p | cut -c 9- | sed -E 's/-r.*//g')"
 
       - name: Create Tag
         if: steps.variables.outputs.OLD_VERSION != steps.variables.outputs.VERSION
