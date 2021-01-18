@@ -13,16 +13,16 @@ ENV DATADIR=$MYSQL_DIR/databases
 RUN \
    echo "**** install runtime packages ****" && \
    apk add --no-cache --upgrade \
-      gnupg \
-      mariadb \
-      mariadb-client \
-      mariadb-common && \
+     gnupg \
+     mariadb \
+     mariadb-client \
+     mariadb-common && \
    echo "**** cleanup ****" && \
    rm -rf \
-      /root/.cache \
-      /tmp/* && \
+     /root/.cache \
+     /tmp/* && \
    mkdir -p \
-      /var/lib/mysql
+     /var/lib/mysql
 
 # copy local files
 COPY root/ /
