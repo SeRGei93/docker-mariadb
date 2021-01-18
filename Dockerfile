@@ -10,7 +10,7 @@ LABEL maintainer="hydaz"
 ENV MYSQL_DIR="/config"
 ENV DATADIR=$MYSQL_DIR/databases
 
-RUN set -xe && \
+RUN \
    echo "**** install runtime packages ****" && \
    apk add --no-cache --upgrade \
       gnupg \
