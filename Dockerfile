@@ -2,8 +2,8 @@ FROM vcxpz/baseimage-alpine:latest
 
 # set version label
 ARG BUILD_DATE
-ARG MARIADB_RELEASE
-LABEL build_version="MariaDB version:- ${MARIADB_RELEASE} Build-date:- ${BUILD_DATE}"
+ARG VERSION
+LABEL build_version="MariaDB version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="hydaz"
 
 # environment variables

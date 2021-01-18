@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OVERLAY_VERSION=$(curl -sX GET "https://raw.githubusercontent.com/hydazz/docker-baseimage-alpine/main/version_info.json" | jq -r .overlay_version)
-MARIADB_RELEASE=$(grep <package_versions.txt -E "mariadb.*?-" | sed -n 1p | cut -c 9- | sed -E 's/-r.*//g')
+MARIADB_RELEASE=${APP_VERSION}
 
 OLD_OVERLAY_VERSION=$(jq <version_info.json -r .overlay_version)
 OLD_MARIADB_RELEASE=$(jq <version_info.json -r .mariadb_release)
