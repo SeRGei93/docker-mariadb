@@ -47,7 +47,7 @@ Then exit the shell with
 
 ## Version Information
 
-![alpine](https://img.shields.io/badge/alpine-edge-0D597F?style=for-the-badge&logo=alpine-linux) ![s6 overlay](https://img.shields.io/badge/s6_overlay-2.1.0.2-blue?style=for-the-badge) ![mariadb](https://img.shields.io/badge/mariadb-10.5.8-003545?style=for-the-badge&logo=mariadb)
+![alpine](https://img.shields.io/badge/alpine-edge-0D597F?style=for-the-badge&logo=alpine-linux) ![mariadb](https://img.shields.io/badge/mariadb-10.5.8-003545?style=for-the-badge&logo=mariadb)
 
 See [package_versions.txt](package_versions.txt) for a full list of the packages and package versions used in this image
 
@@ -73,4 +73,4 @@ See [package_versions.txt](package_versions.txt) for a full list of the packages
 
 ## Upgrading MariaDB
 
-To upgrade, all you have to do is pull our latest Docker image. We automatically check for MariaDB updates weekly so there may be some delay when an update is released to when the image is updated.
+To upgrade, all you have to do is pull our latest Docker image. We automatically check for MariaDB updates daily so there may be some delay when an update is released to when the image is updated.
