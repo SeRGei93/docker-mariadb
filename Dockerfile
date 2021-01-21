@@ -30,7 +30,7 @@ COPY root/ /
 
 # mariadb healthcheck
 HEALTHCHECK --start-period=10s --timeout=5s \
-   CMD pgrep mysqld
+   CMD pgrep mariadbd
 
 # ports and volumes
 EXPOSE 3306
