@@ -28,10 +28,6 @@ RUN \
 # copy local files
 COPY root/ /
 
-# mariadb healthcheck
-HEALTHCHECK --start-period=10s --timeout=5s \
-   CMD pgrep mariadbd
-
 # ports and volumes
 EXPOSE 3306
 VOLUME /config
