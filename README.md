@@ -45,12 +45,6 @@ Then exit the shell with
 
     exit
 
-## Version Information
-
-![alpine](https://img.shields.io/badge/alpine-edge-0D597F?style=for-the-badge&logo=alpine-linux) ![mariadb](https://img.shields.io/badge/mariadb-10.5.8-003545?style=for-the-badge&logo=mariadb)
-
-See [package_versions.txt](package_versions.txt) for a full list of the packages and package versions used in this image
-
 ## Usage
 
     docker run -d \
