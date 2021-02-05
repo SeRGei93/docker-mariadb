@@ -23,7 +23,7 @@ if [ ! -d "${DATADIR}/mysql" ]; then
 
 	# set basic sql command
 	tempSqlFile=$(mktemp)
-	chown -R abc:abc $tempSqlFile
+	chown -R abc:abc "${tempSqlFile}"
 	cat >"${tempSqlFile}" <<-EOSQL
 		DELETE FROM mysql.user WHERE user <> 'mariadb.sys';
 	EOSQL
@@ -91,14 +91,8 @@ EOM
 		done
 	fi
 	# set some permissions needed before we begin initialising
-	chown -R abc:abc \
-		/config/log/mysql \
-		/var/run/mysqld
-
-	chmod -R 777 \
-		/config/log/mysql \
-		/var/run/mysqld \
-		/var/lib/mysql
+	chown -R abc:abc /config/log/mysql /var/run/mysqld /var/lib/mysql
+	chmod -R 777 /config/log/mysql /var/run/mysqld /var/lib/mysql
 
 	# initialise database structure
 	mysql_install_db --datadir="${DATADIR}" --user=abc
@@ -107,7 +101,7 @@ EOM
 	start_mysql
 
 	# shut down after apply sql commands, waiting for pid to stop
-	mysqladmin -uroot shutdown
+	mysqladmin -u root shutdown
 	wait "${pid}"
 	echo "Database Setup Completed"
 
