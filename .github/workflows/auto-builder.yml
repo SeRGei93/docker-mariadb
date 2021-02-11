@@ -39,13 +39,10 @@ jobs:
 
       - name: Build The Docker Image For Testing
         run: |
-          docker buildx build \
-            --platform=linux/amd64,linux/arm64,linux/arm/v7 \
-            --load \
-            --build-arg TAG=latest \
-            --build-arg BUILD_DATE="$(date +%Y-%m-%d)" \
+          docker build \
             --build-arg VERSION=$(curl -sX GET "https://api.github.com/repos/hydazz/docker-mariadb/releases/latest" | jq -r .tag_name) \
             --tag vcxpz/ci-build:ci-build \
+            --build-arg TAG=latest \
             --file Dockerfile .
 
       - name: Test The Docker Image
