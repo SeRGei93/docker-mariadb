@@ -1,18 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-# for mariadb
-
-echo "This may take a while, be patient!"
-find /config -type d -exec chmod 0755 {} \; &
-find /config -type f -exec chmod 0644 {} \;
-
 find /config/databases/ -type f -exec chmod 0640 {} \; &
 find /config/databases/ -type d -exec chmod 0700 {} \;
 
 chmod 755 /config/databases
-
 chmod 660 /config/databases/ibtmp1
-
 chmod 640 /config/log/mysql/*
-
-echo "Please restart the container"
