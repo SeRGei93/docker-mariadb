@@ -1,5 +1,4 @@
-ARG TAG
-FROM vcxpz/baseimage-alpine:${TAG}
+FROM vcxpz/baseimage-alpine:latest
 
 # set version label
 ARG BUILD_DATE
@@ -12,13 +11,24 @@ ENV MYSQL_DIR="/config"
 ENV DATADIR=$MYSQL_DIR/databases
 
 RUN \
+	echo "**** install build packages ****" && \
+	apk add --no-cache --virtual=build-dependencies \
+		curl && \
 	echo "**** install runtime packages ****" && \
-	apk add --no-cache --upgrade \
+	if [ -z ${VERSION+x} ]; then \
+		VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && \
+			awk '/^P:mariadb$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
+	fi && \
+	apk add --no-cache \
 		gnupg \
-		mariadb \
-		mariadb-client \
-		mariadb-common && \
+		mariadb==${VERSION} \
+		mariadb-backup==${VERSION} \
+		mariadb-client==${VERSION} \
+		mariadb-common==${VERSION} \
+		mariadb-server-utils==${VERSION} && \
 	echo "**** cleanup ****" && \
+	apk del --purge \
+		build-dependencies && \
 	rm -rf \
 		/root/.cache \
 		/tmp/* && \
