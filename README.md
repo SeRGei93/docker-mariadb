@@ -1,4 +1,4 @@
-# docker-mariadb
+## docker-mariadb
 
 [![docker hub](https://img.shields.io/badge/docker_hub-link-blue?style=for-the-badge&logo=docker)](https://hub.docker.com/r/vcxpz/mariadb) ![docker image size](https://img.shields.io/docker/image-size/vcxpz/mariadb?style=for-the-badge&logo=docker) [![auto build](https://img.shields.io/badge/docker_builds-automated-blue?style=for-the-badge&logo=docker?color=d1aa67)](https://github.com/hydazz/docker-mariadb/actions?query=workflow%3A"Auto+Builder+CI") [![codacy branch grade](https://img.shields.io/codacy/grade/8b8c6b240ae048888a185beb38fcc598/main?style=for-the-badge&logo=codacy)](https://app.codacy.com/gh/hydazz/docker-mariadb)
 
@@ -6,7 +6,7 @@ Fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-maria
 
 [MariaDB](https://mariadb.org/) was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance.
 
-# Initial Setup
+## Initial Setup
 
 Here's a quickstart guide on how to login to MySQL and create a new user and database.
 
@@ -60,7 +60,7 @@ Then exit the shell with
 exit
 ```
 
-# Usage
+## Usage
 
 ```bash
 docker run -d \
@@ -69,9 +69,9 @@ docker run -d \
   -e PGID=1000 \
   -e MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD \
   -e TZ=Australia/Melbourne \
-  -e MYSQL_DATABASE=USER_DB_NAME `#optional` \
-  -e MYSQL_USER=MYSQL_USER `#optional` \
-  -e MYSQL_PASSWORD=DATABASE_PASSWORD `#optional` \
+  -e MYSQL_DATABASE=USER_DB_NAME #optional \
+  -e MYSQL_USER=MYSQL_USER #optional \
+  -e MYSQL_PASSWORD=DATABASE_PASSWORD #optional \
   -p 3306:3306 \
   -v <path to appdata>:/config \
   --restart unless-stopped \
@@ -82,10 +82,10 @@ docker run -d \
 
 **Read the official [README.md](https://github.com/linuxserver/docker-mariadb/) for more information**
 
-# Upgrading MariaDB
+## Upgrading MariaDB
 
 To upgrade, all you have to do is pull the latest Docker image. We automatically check for MariaDB updates daily so there may be some delay when an update is released to when the image is updated.
 
-# Fixing Appdata Permissions
+## Fixing Appdata Permissions
 
 If you ever accidentally screw up the permissions on the appdata folder, run `fix-perms` within the container. This will restore most of the files/folders with the correct permissions.
