@@ -15,7 +15,7 @@ RUN \
 	apk add --no-cache --virtual=build-dependencies \
 		curl && \
 	if [ -z ${VERSION+x} ]; then \
-		VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && \
+		VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && \
 			awk '/^P:mariadb$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
 	fi && \
 	echo "**** install runtime packages ****" && \
