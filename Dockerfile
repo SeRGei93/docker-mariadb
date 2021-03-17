@@ -10,7 +10,7 @@ LABEL maintainer="hydaz"
 ENV MYSQL_DIR="/config"
 ENV DATADIR=$MYSQL_DIR/databases
 
-RUN \
+RUN set -xe && \
 	echo "**** install build packages ****" && \
 	apk add --no-cache --virtual=build-dependencies \
 		curl && \
