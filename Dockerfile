@@ -21,11 +21,11 @@ RUN set -xe && \
 	echo "**** install runtime packages ****" && \
 	apk add --no-cache \
 		gnupg \
-		mariadb==${VERSION} \
-		mariadb-backup==${VERSION} \
-		mariadb-client==${VERSION} \
-		mariadb-common==${VERSION} \
-		mariadb-server-utils==${VERSION} && \
+		mariadb=="${VERSION}" \
+		mariadb-backup=="${VERSION}" \
+		mariadb-client=="${VERSION}" \
+		mariadb-common=="${VERSION}" \
+		mariadb-server-utils=="${VERSION}" && \
 	echo "**** cleanup ****" && \
 	apk del --purge \
 		build-dependencies && \
