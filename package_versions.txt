@@ -27,7 +27,7 @@ libattr-2.5.1-r0
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
 libcap-2.53-r0
-libcrypto1.1-1.1.1k-r1
+libcrypto1.1-1.1.1l-r0
 libcurl-7.78.0-r0
 libffi-3.3-r2
 libgcc-10.3.1_git20210625-r0
@@ -39,7 +39,7 @@ libldap-2.4.59-r0
 libproc-3.3.17-r0
 libretls-3.3.3p1-r4
 libsasl-2.1.27-r12
-libssl1.1-1.1.1k-r1
+libssl1.1-1.1.1l-r0
 libstdc++-10.3.1_git20210625-r0
 libtasn1-4.17.0-r0
 libunistring-0.9.10-r1
@@ -52,8 +52,8 @@ mariadb-common-10.6.4-r0
 mariadb-server-utils-10.6.4-r0
 musl-1.2.2-r5
 musl-utils-1.2.2-r5
-ncurses-libs-6.2_p20210814-r0
-ncurses-terminfo-base-6.2_p20210814-r0
+ncurses-libs-6.2_p20210821-r1
+ncurses-terminfo-base-6.2_p20210821-r1
 nettle-3.7.3-r0
 nghttp2-libs-1.44.0-r0
 npth-1.6-r1
