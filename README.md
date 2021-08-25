@@ -2,7 +2,7 @@
 
 [![docker hub](https://img.shields.io/badge/docker_hub-link-blue?style=for-the-badge&logo=docker)](https://hub.docker.com/r/vcxpz/mariadb) ![docker image size](https://img.shields.io/docker/image-size/vcxpz/mariadb?style=for-the-badge&logo=docker) [![auto build](https://img.shields.io/badge/docker_builds-automated-blue?style=for-the-badge&logo=docker?color=d1aa67)](https://github.com/hydazz/docker-mariadb/actions?query=workflow%3A"Auto+Builder+CI")
 
-Fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-mariadb/) (Equivalent to alpine-10.5.9-r0-ls16)
+Fork of [linuxserver/docker-mariadb](https://github.com/linuxserver/docker-mariadb/) (Equivalent to alpine-10.5.12-r0-ls30)
 
 [MariaDB](https://mariadb.org/) was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance.
 
