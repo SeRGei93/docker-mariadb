@@ -53,8 +53,8 @@ mariadb-common-10.6.4-r2
 mariadb-server-utils-10.6.4-r2
 musl-1.2.2-r7
 musl-utils-1.2.2-r7
-ncurses-libs-6.3_p20211204-r0
-ncurses-terminfo-base-6.3_p20211204-r0
+ncurses-libs-6.3_p20211211-r0
+ncurses-terminfo-base-6.3_p20211211-r0
 nettle-3.7.3-r0
 nghttp2-libs-1.46.0-r0
 npth-1.6-r1
